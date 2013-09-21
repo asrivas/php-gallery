@@ -1,0 +1,112 @@
+/*
+ Anu Srivastava
+ as43758
+ asrivastava274@gmail.com
+ */
+body
+{
+  background-color:#EFF4F3;
+  font-family: Arial, Verdana, sans-serif;
+}
+#container
+{
+  background-color:#FAFAFA
+  position:absolute;
+  margin: 5%;
+  width: 75%; 
+}
+#header
+{
+  background-color:#21B6AE;
+  padding: 15px;
+}
+/*http://www.maxdesign.com.au/articles/css-layouts/one-fixed/*/
+#nav-bar
+{
+  background-color:#343A39;
+  float: left;
+  width: 100%;
+  
+}
+#nav-bar ul
+{
+  margin: 0px;
+  padding: 0px;
+}
+#nav-bar ul li
+{
+  list-style-type: none;
+  display: inline;
+}
+#nav-bar li a
+{
+  display: block;
+  float: left;
+  padding: 4px 10px;
+  color: #FFFFFF;
+  text-decoration: none;
+  border-right: 1px solid #FFFFFF;  
+  border-left: 1px solid #FFFFFF;
+
+}
+#nav-bar #right-tab
+{
+  float: right;
+}
+
+#nav-bar a:hover
+{
+  background-color: #585858;
+}
+#content
+{
+  background-color:#FFFFFF;
+  padding: 20px;
+}
+#content img
+{
+  padding: 15px;
+}
+#content ul
+{
+  list-style-type: none;
+}
+#content ul li
+{
+  padding: 4px;
+}
+#controls
+{
+  padding: 10px;
+}
+#prev
+{
+  display: inline;
+  float: left;
+}
+#album{
+  display: inline;
+  float: center;
+}
+#next
+{
+  display: inline;
+  float: right;
+}
+#albums img
+{
+  padding: 4px;
+}
+#albums a
+{
+  padding: 4px;
+}
+#thumbnails
+{
+  padding: 10px;
+}
+#thumbnails img
+{
+  display: inline:
+  padding: 10px;
+}
