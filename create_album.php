@@ -20,26 +20,30 @@
 	$has_title = ($_POST['title'] != ""); 
 	$pwd_match = ($_POST['password'] == $pwd); 
 	$success = isset($_POST['AddAlbum']) && $has_title && $pwd_match;
-	
-	$albums = getArray("albums");
-	foreach($albums as $a){
-	  //echo key($a);
-	  //print_r($a);
-	  //echo $a[0];
-	}
+
 	
 	if($success){
 	    $albums = getArray("albums");
-	    $album;
-	    foreach($albums as $key => $value){
-	      if($key == $_POST['name']){
-	        $album = $value;
-		array_push($album, $_POST['title']);
-		print_r ($album);
-		saveArray($album, "albums");
-	      }
+	    
+	    for($i = 0; $i < sizeof($albums); $i++){
+	      if($albums[$i]['name'] == $_POST['name']){
+	      	  $a = $albums[$i]['albums'];
+		  array_push($a, $_POST['title']);
+		  $albums[$i]['albums'] = $a;
+		  saveArray($albums, "albums");
+		  
+		  
+		  $album_photos = getArray("album_photos");
+		  $p = array("name" => $_POST['name'], "album" => $_POST['title'], "photos" => array());
+		  array_push($album_photos, $p);
+		  saveArray($album_photos, "album_photos");
+	      
+	      }// end if
 	    }
-	}
+	    
+
+
+	} // if success
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
@@ -96,7 +100,7 @@
 	}
       }
 ?>
-	  <div id="form">
+	  <div id="form" align="left">
 	    <form action="create_album.php" method="post" enctype="multipart/form-data">
 	      <fieldset>
 		<labet>Title: </label>

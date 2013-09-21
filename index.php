@@ -2,8 +2,6 @@
     require_once("photo_lib.php");
     $users = getArray("users");
   
-
-
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -25,12 +23,12 @@
       
       <div id="nav-bar">
 	<ul>	
-	   <li><a href="index.php">Home</a></li>
-	   <li><a href="signup.php">Sign Up</a></li>	  
-	   <li><a href="create_album.php">Create Album</a></li>
-	   <li><a href="upload_photo.php">Upload Photo</li>
-	   <li><a href="index.php">Search </a></li>
-	   <li><a href="index.php">Sign Out</a></li>
+	    <li><a href="index.php">Home</a></li>
+	    <li><a href="signup.php">Sign Up</a></li>
+	    <li><a href="create_album.php">Create Album</a></li>
+	    <li><a href="upload_photo.php">Upload Photo</li>
+	    <li><a href="index.html">Search</a></li>
+	    <li><a href="index.html">Sign Out</a></li>
 	</ul>
       </div>
       

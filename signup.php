@@ -11,15 +11,21 @@
 	  $password = $_POST['Password'];
 	  $users = getArray('users');
 	  $user = array('name' => $name, 'password' => $password);
+	  array_push($users, $user);
 	  
 	  $all_albums = getArray("albums");
-	  $album = array('name' => $name, 'albums' => array() );
-	  array_push($album['albums'], 'My First Album');
+	  $count = sizeof($all_albums);
+	  $album = array('id' => $count ,'name' => $name, 'albums' => array() );
+	  $album_name = $name." First Album";
+	  array_push($album['albums'], $album_name);
 	  array_push($all_albums, $album);
 	  
 	  
+	  $album_photos = getArray("album_photos");
+	  $p = array("name" => $name, "album" => $album_name, "photos" => array());
+	  array_push($album_photos, $p);
 	  
-	  
+	  saveArray($album_photos, "album_photos");
 	  saveArray($all_albums, "albums");
 	  saveArray($users, 'users');
 	}
