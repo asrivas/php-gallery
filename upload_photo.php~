@@ -39,7 +39,7 @@
 	$pwd_match = ($_POST['password'] == $pwd); 	
 	
 ////////////////////////////////////////////////////////////////////////////////////
-// UPLOAD FILE CODE
+// UPLOAD FILE CODE taken from W3SCHOOLS
 
 $uploaded = false;
 
