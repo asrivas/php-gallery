@@ -1,6 +1,14 @@
 <?php 
 	require_once('photo_lib.php');
-
+	
+	 $n = $_GET['name']; 
+	 $all_albums = getArray("albums");
+	 foreach($all_albums as $alb){
+	    if($alb['name'] == $_GET['name']){
+	      $albums = $alb['albums'];
+	    }
+	 }
+	 
 	
 	if($success){
 
@@ -15,7 +23,7 @@
 -->
 <html xmlns="http://www.w3.org/1999/xhtml"> 
   <head>
-    <title>Asrivas' Photo Gallery</title>
+    <title>Photo Gallery</title>
     <link rel="stylesheet" href="style.css" />
     <!--http://www.oswd.org/design/information/id/2704-->
   </head>
@@ -23,7 +31,7 @@
   <body>
     <div id="container">
       <div id="header">
-      	<h1>Asrivas' Photo Gallery</h1>
+      	<h1>Photo Gallery</h1>
       </div>
       
       <div id="nav-bar">	    
@@ -45,26 +53,37 @@
 <?php
    } else
      {
-     if (isset ($_POST['AddPhoto'])) {
-     	  echo '<span style="color: red;">Photo Upload Error</span>';
+     if (isset ($_POST['ViewAlbum'])) {
+     	  echo '<span style="color: red;">Error</span>';
      } else {
-       	  echo 'Upload a Photo';
+       	  echo 'Select an Album to View';
 	}
-       echo <<<_NOT_SUBMITTED
+?>
+	<form action="view_album.php" method="get" enctype="multipart/form-data">
+	  <fieldset>
+	    <input type="hidden" name="name" value="
+<?php $_GET['name']
+?>	    
+	    " />
+	    <select name="name">
+<?php 
+                       echo "<option value='$n'>$n</option>\n";
+?>
+	    </select><br>
+	    <label>Select an album to view:</label><br>
+	      
+	      <select name="album">
+<?php
+                    foreach ($albums as $a){
+                       echo "<option value='$a'>$a</option>\n";
+                    } 
+?>	      
+              </select><br>
+	    <input name="ViewAlbum" value="View Album" type="submit"/>
 
-
-	  <form action="upload_photo.php" method="post" enctype="multipart/form-data">
-	    <fieldset>
-	      <label>File: </label>
-	      <input type="file" name="file" id="file"><br/>
-	      <labet>Title: </label>
-	      <input type="submit" name="UploadPhoto" value="Upload Photo">
-
-	    </fieldset>
+	  </fieldset>
 	  </form>
-
-_NOT_SUBMITTED;
-// Make sure the terminating tag of your heredoc has no whitespace in front!
+<?php
 	}
 
 ?>

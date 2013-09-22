@@ -78,9 +78,9 @@ if ((($_FILES["file"]["type"] == "image/gif")
     else
       {
       move_uploaded_file($_FILES["file"]["tmp_name"],
-      "photos/" . $_FILES["file"]["name"]);
+     "photos/" . $_FILES["file"]["name"]);
       $uploaded = true;
-      echo "Stored in: " . "photos/" . $_FILES["file"]["name"];
+  //    echo "Stored in: " . "photos/" . $_FILES["file"]["name"];
       }
     }
 }
@@ -122,7 +122,7 @@ else
 -->
 <html xmlns="http://www.w3.org/1999/xhtml"> 
   <head>
-    <title>Asrivas' Photo Gallery</title>
+    <title>Photo Gallery</title>
     <link rel="stylesheet" href="style.css" />
     <!--http://www.oswd.org/design/information/id/2704-->
   </head>
@@ -130,7 +130,7 @@ else
   <body>
     <div id="container">
       <div id="header">
-      	<h1>Asrivas' Photo Gallery</h1>
+      	<h1>Photo Gallery</h1>
       </div>
       
       <div id="nav-bar">	    
@@ -139,8 +139,8 @@ else
 	    <li><a href="signup.php">Sign Up</a></li>
 	    <li><a href="create_album.php">Create Album</a></li>
 	    <li><a href="upload_photo.php">Upload Photo</li>
-	    <li><a href="index.html">Search</a></li>
-	    <li><a href="index.html">Sign Out</a></li>
+	    <li><a href="index.php">Search</a></li>
+	    <li><a href="index.php">Sign Out</a></li>
 	</ul>
       </div>
 
@@ -176,7 +176,6 @@ else
 		<label>User: </label>
 		<select name="name">
 <?php
-		     print_r($names);
                     foreach ($names as $n){
                        echo "<option value='$n'>$n</option>\n";
                     } 

@@ -1,6 +1,15 @@
 <?php 
 	require_once('photo_lib.php');
 	$name = $_GET['name'];
+	$photo = $_GET['photo'];
+	
+	$photos_info = getArray("photos_info");
+	foreach($photos_info as $a){
+	  if(key($a) == $_GET['photo']){
+	    $title = ($a[key($a)]);
+	  }
+	}
+	
 
 	
 	if($success){
@@ -16,7 +25,7 @@
 -->
 <html xmlns="http://www.w3.org/1999/xhtml"> 
   <head>
-    <title>Asrivas' Photo Gallery</title>
+    <title>Photo Gallery</title>
     <link rel="stylesheet" href="style.css" />
     <!--http://www.oswd.org/design/information/id/2704-->
   </head>
@@ -24,7 +33,7 @@
   <body>
     <div id="container">
       <div id="header">
-      	<h1>Asrivas' Photo Gallery</h1>
+      	<h1>Photo Gallery</h1>
       </div>
       
       <div id="nav-bar">	    
@@ -39,32 +48,15 @@
       </div>
 
       <div id="content" align="center">
-<?php 
-  if($success){
-?>      
-    <h3>Photo was uploaded.</h3>
-<?php
-   } else
-     {
-     if (isset ($_POST['AddPhoto'])) {
-     	  echo '<span style="color: red;">Photo Upload Error</span>';
-     } else {
-       	  echo 'Add Photo';
-	}
-       echo <<<_NOT_SUBMITTED
-
-
-	  <form action="upload_photo.php" method="post" enctype="multipart/form-data">
-	    <fieldset>
-
-	    </fieldset>
-	  </form>
-
-_NOT_SUBMITTED;
-// Make sure the terminating tag of your heredoc has no whitespace in front!
-	}
-
+      <h3>
+<?php echo $title; 
 ?>
+      </h3>
+
+	<img src="photos/
+	
+<?php echo($photo); 	
+?>">
       
       </div>
     </div>

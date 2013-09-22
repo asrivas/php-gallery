@@ -54,7 +54,7 @@
 -->
 <html xmlns="http://www.w3.org/1999/xhtml"> 
   <head>
-    <title>Asrivas' Photo Gallery</title>
+    <title>Photo Gallery</title>
     <link rel="stylesheet" href="style.css" />
     <!--http://www.oswd.org/design/information/id/2704-->
   </head>
@@ -62,7 +62,7 @@
   <body>
     <div id="container">
       <div id="header">
-      	<h1>Asrivas' Photo Gallery</h1>
+      	<h1>Photo Gallery</h1>
       </div>
       
       <div id="nav-bar">	    

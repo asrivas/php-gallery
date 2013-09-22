@@ -27,8 +27,8 @@
 	    <li><a href="signup.php">Sign Up</a></li>
 	    <li><a href="create_album.php">Create Album</a></li>
 	    <li><a href="upload_photo.php">Upload Photo</li>
-	    <li><a href="index.html">Search</a></li>
-	    <li><a href="index.html">Sign Out</a></li>
+	    <li><a href="index.php">Search</a></li>
+	    <li><a href="index.php">Sign Out</a></li>
 	</ul>
       </div>
       
@@ -44,7 +44,7 @@
 ?>
     	<form action="profile.php" method="get" enctype="multipart/form-data">
 	  <fieldset>
-	    <label>Select a User's Album to View:
+	    <label>Select a user to view his or her albums:
 	      <select name="name">
 <?php
                     foreach ($names as $name){
